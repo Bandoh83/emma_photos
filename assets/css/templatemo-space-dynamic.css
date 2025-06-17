@@ -927,46 +927,284 @@ Banner Style
 About Us Style
 --------------------------------------------- 
 */
+/* About Section Styles */
 
-#about {
-  margin-top: 120px;
+
+/* Modern About Section with Creative Image Placement */
+.about-section {
+  padding: 100px 0;
+  background-color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
 }
 
-.about-us {
-  background-image: url(../images/about-bg.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding: 140px 0px 120px 0px;
+.photography-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.about-us .left-image {
-  margin-right: 45px;
+.aperture-ring {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  width: 300px;
+  height: 300px;
+  border: 2px dashed rgba(0,0,0,0.05);
+  border-radius: 50%;
+  animation: aperture-spin 20s infinite linear;
 }
 
-.about-us .services .item {
-  margin-bottom: 10px;
+@keyframes aperture-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-.about-us .services .item .icon {
-  float: left;
-  margin-right: 25px;
+.light-leak {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.03) 100%);
+  animation: light-flicker 12s infinite alternate;
 }
 
-.about-us .services .item .icon img {
-  max-width: 70px;
+/* Creative Image Composition */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
-.about-us .services .item h4 {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
+.image-column {
+  position: relative;
+  height: 80%;
 }
 
-.about-us .services .item p {
-  color: #fff;
+.image-composition {
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  margin-left: auto;
 }
+
+.main-image {
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transform: rotate(-3deg);
+  transition: transform 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.image-composition:hover .main-image {
+  transform: rotate(0deg);
+}
+/* 
+.image-frame {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transition: all 0.5s ease;
+} */
+
+.image-composition:hover .image-frame {
+  top: -15px;
+  left: -15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.floating-polaroid {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 40%;
+  padding: 15px 15px 30px 15px;
+  background: white;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transform: rotate(8deg);
+  z-index: 3;
+  transition: all 0.5s ease;
+}
+
+.floating-polaroid img {
+  width: 100%;
+  display: block;
+}
+
+.image-composition:hover .floating-polaroid {
+  transform: rotate(5deg) translateY(-10px);
+}
+
+.experience-badge {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  background: #222;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  z-index: 4;
+  animation: badge-bounce 3s infinite;
+}
+
+@keyframes badge-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Content Styling */
+.content-column {
+  padding-left: 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-icon {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.highlight {
+  color: #222;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(0,0,0,0.1);
+  z-index: -1;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.lead {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.style-highlight {
+  margin: 30px 0;
+  padding-left: 20px;
+  border-left: 3px solid rgba(0,0,0,0.1);
+}
+
+.style-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.style-tags span {
+  background: rgba(0,0,0,0.05);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.closing {
+  font-weight: 500;
+}
+
+/* CTA Button */
+.cta-wrapper {
+  margin-top: 40px;
+}
+
+.cta-button {
+  display: inline-block;
+  position: relative;
+  background: #222;
+  color: white;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-weight: 600;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.button-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .button-flash {
+  transform: translateX(100%);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .image-composition {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .content-column {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-polaroid {
+    width: 30%;
+    right: -10px;
+  }
+  
+  .experience-badge {
+    top: -10px;
+    left: -10px;
+  }
+}
+
+
 
 
 /* 
@@ -1219,7 +1457,7 @@ Blog
 
 .featured-post img {
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -1233,7 +1471,7 @@ Blog
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to bottom, rgba(58, 58, 58, 0.8), transparent);
   padding: 30px;
   color: white;
 }
