@@ -1,9 +1,6 @@
 /* 
-
 TemplateMo 562 Space Dynamic
-
 https://templatemo.com/tm-562-space-dynamic
-
 */
 
 /* ---------------------------------------------
@@ -21,14 +18,15 @@ Table of contents
 10. preloader
 11. search
 12. portfolio
-
 --------------------------------------------- */
+
 /* 
 ---------------------------------------------
 font & reset css
 --------------------------------------------- 
 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* 
 ---------------------------------------------
 reset
@@ -52,7 +50,6 @@ figure, header, nav, section, article, aside, footer, figcaption {
 }
 
 /* ---- .grid-item ---- */
-
 .grid-sizer,
 .grid-item {
   width: 50%;
@@ -156,6 +153,23 @@ body {
   color: #fff;
 }
 
+/* Base font size adjustment for responsive design */
+html {
+  font-size: 100%;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 85%;
+  }
+}
+
 @media (max-width: 991px) {
   html, body {
     overflow-x: hidden;
@@ -176,6 +190,12 @@ body {
   margin-top: 120px;
 }
 
+@media (max-width: 767px) {
+  .page-section {
+    margin-top: 80px;
+  }
+}
+
 .section-heading h2 {
   font-size: 30px;
   text-transform: capitalize;
@@ -185,6 +205,13 @@ body {
   position: relative;
   z-index: 2;
   line-height: 44px;
+}
+
+@media (max-width: 767px) {
+  .section-heading h2 {
+    font-size: 26px;
+    line-height: 36px;
+  }
 }
 
 .section-heading h2 em {
@@ -213,7 +240,7 @@ body {
   background-color: #8d6e63;
   font-size: 15px;
   font-weight: 400;
-  color: #fff;
+  color: #651515;
   text-transform: capitalize;
   padding: 12px 25px;
   border-radius: 23px;
@@ -232,12 +259,20 @@ body {
   letter-spacing: 0.25px;
 }
 
+@media (max-width: 767px) {
+  .main-blue-button a,
+  .main-red-button a,
+  .main-white-button a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
 /* 
 ---------------------------------------------
 header
 --------------------------------------------- 
 */
-
 .background-header {
   background-color: #fff!important;
   height: 80px!important;
@@ -344,7 +379,7 @@ header
 
 .header-area .main-nav .nav li:last-child a ,
 .background-header .main-nav .nav li:last-child a {
-  color: #fff !important;
+  color: #490707 !important;
   padding: 0px 20px;
   font-weight: 400;
 }
@@ -630,7 +665,7 @@ header
   .header-area {
     background-color: #f7f7f7;
     padding: 0px 15px;
-    height: 100px;
+    height: 80px;
     box-shadow: none;
     text-align: center;
   }
@@ -638,10 +673,13 @@ header
     padding: 0px;
   }
   .header-area .logo {
-    margin-left: 30px;
+    margin-left: 15px;
+    font-size: 20px;
   }
   .header-area .menu-trigger {
     display: block !important;
+    top: 20px;
+    right: 20px;
   }
   .header-area .main-nav {
     overflow: hidden;
@@ -655,6 +693,7 @@ header
     -o-transition: all 0s ease 0s;
     transition: all 0s ease 0s;
     margin-left: 0px;
+    margin-top: 60px;
   }
   .background-header .nav {
     margin-top: 80px;
@@ -673,8 +712,8 @@ header
     padding-right: 0px !important;
   }
   .header-area .main-nav .nav li a {
-    height: 50px !important;
-    line-height: 50px !important;
+    height: 45px !important;
+    line-height: 45px !important;
     padding: 0px !important;
     border: none !important;
     background: #f7f7f7 !important;
@@ -920,7 +959,65 @@ Banner Style
   color: #fff;
 }
 
+/* Banner Responsive Styles */
+@media (max-width: 1200px) {
+  .main-banner {
+    padding-top: 180px;
+  }
+  
+  .main-banner .left-content h2 {
+    font-size: 42px;
+    line-height: 60px;
+  }
+}
 
+@media (max-width: 992px) {
+  .main-banner {
+    padding-top: 150px;
+    text-align: center;
+  }
+  
+  .main-banner .left-content {
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-top: -50px;
+  }
+  
+  .main-banner .left-content h2 {
+    font-size: 36px;
+    line-height: 50px;
+  }
+  
+  .main-banner .left-content form,
+  .main-banner .left-content form input {
+    width: 100% !important;
+  }
+  
+  .main-banner:after,
+  .main-banner:before {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-banner {
+    padding-top: 120px;
+  }
+  
+  .main-banner .left-content h2 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  
+  .main-banner .left-content h6 {
+    font-size: 16px;
+  }
+  
+  .main-banner .left-content p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
 
 /* 
 ---------------------------------------------
@@ -928,7 +1025,6 @@ About Us Style
 --------------------------------------------- 
 */
 /* About Section Styles */
-
 
 /* Modern About Section with Creative Image Placement */
 .about-section {
@@ -984,6 +1080,35 @@ About Us Style
   z-index: 1;
 }
 
+@media (max-width: 1200px) {
+  .about-grid {
+    gap: 40px;
+  }
+  
+  .image-composition {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-column {
+    order: 2;
+    margin-top: 40px;
+  }
+  
+  .content-column {
+    order: 1;
+  }
+  
+  .image-composition {
+    margin: 0 auto;
+  }
+}
+
 .image-column {
   position: relative;
   height: 80%;
@@ -1009,70 +1134,30 @@ About Us Style
 .image-composition:hover .main-image {
   transform: rotate(0deg);
 }
-/* 
-.image-frame {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: 20px;
-  bottom: 20px;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 8px;
-  z-index: 1;
-  transition: all 0.5s ease;
-} */
-
-.image-composition:hover .image-frame {
-  top: -15px;
-  left: -15px;
-  right: 15px;
-  bottom: 15px;
-}
-
-.floating-polaroid {
-  position: absolute;
-  bottom: -30px;
-  right: -30px;
-  width: 40%;
-  padding: 15px 15px 30px 15px;
-  background: white;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-  transform: rotate(8deg);
-  z-index: 3;
-  transition: all 0.5s ease;
-}
-
-.floating-polaroid img {
-  width: 100%;
-  display: block;
-}
-
-.image-composition:hover .floating-polaroid {
-  transform: rotate(5deg) translateY(-10px);
-}
-
-.experience-badge {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  background: #222;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: 600;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  z-index: 4;
-  animation: badge-bounce 3s infinite;
-}
-
-@keyframes badge-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
 
 /* Content Styling */
 .content-column {
   padding-left: 20px;
+}
+
+@media (max-width: 576px) {
+  .content-column {
+    padding-left: 0;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .experience-badge {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+  
+  .floating-polaroid {
+    width: 30%;
+    right: -10px;
+  }
 }
 
 .section-header {
@@ -1175,38 +1260,6 @@ About Us Style
   transform: translateX(100%);
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  
-  .image-composition {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .content-column {
-    padding-left: 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .floating-polaroid {
-    width: 30%;
-    right: -10px;
-  }
-  
-  .experience-badge {
-    top: -10px;
-    left: -10px;
-  }
-}
-
-
-
-
 /* 
 ---------------------------------------------
 Services Style
@@ -1214,8 +1267,8 @@ Services Style
 */
 
 .our-services {
-  margin-top: 0px;
-  padding-top: 90px;
+  margin-top: 40px;
+  padding-top: 40px;
 }
 
 .our-services .left-image {
