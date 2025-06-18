@@ -1356,93 +1356,108 @@ Portfolio
 --------------------------------------------- 
 */
 
-.our-portfolio {
-  padding-top: 120px;
-  margin-top: 0px;
+/* Portfolio Scroll Container */
+.portfolio-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0;
+  -webkit-overflow-scrolling: touch;
 }
 
-.our-portfolio .section-heading h2 {
-  text-align: center;
-  margin: 0px 90px 0px 90px;
-  margin-bottom: 120px;
-  position: relative;
-  z-index: 1;
+.portfolio-scroll-wrapper {
+  display: inline-flex;
+  gap: 30px;
+  padding: 0 15px;
+  min-width: 100%;
 }
 
+.portfolio-item {
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+/* Updated Portfolio Item Styles */
 .our-portfolio .item {
   position: relative;
-}
-
-.our-portfolio .item:hover .hidden-content {
-  top: -100px;
-  opacity: 1;
-  visibility: visible;
-}
-
-.our-portfolio .item:hover .showed-content {
-  top: 90px;
-}
-
-.our-portfolio .hidden-content {
-  background: rgb(255,77,30);
-  background: linear-gradient(105deg, rgba(255,77,30,1) 0%, rgb(50, 23, 0) 100%);
-  padding: 20px;
+  height: 300px;
   border-radius: 20px;
-  text-align: center;
-  opacity: 0;
-  top: 0;
-  visibility: hidden;
-  position: absolute;
-  z-index: 2;
-  transition: all 0.5s;
-}
-
-.our-portfolio .hidden-content:after {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  background: rgb(255,77,30);
-  content: '';
-  left: 50%;
-  bottom: -8px;
-  margin-left: -5px;
-  transform: rotate(45deg);
-  background: linear-gradient(105deg, rgba(255,52,69,1) 0%, rgba(255,51,78,1) 100%);
-  z-index: -1;
-}
-
-.our-portfolio .hidden-content h4 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.our-portfolio .hidden-content p {
-  color: #fff;
+  overflow: hidden;
 }
 
 .our-portfolio .showed-content {
-  top: 0px;
   position: relative;
-  z-index: 3;
-  background-color: #fff;
-  text-align: center;
-  padding: 0;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-  transition: all 0.5s;
-  overflow: hidden;
-  height: 300px;
+  height: 100%;
+  width: 100%;
 }
 
 .our-portfolio .showed-content img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: all 0.5s ease;
 }
 
+.our-portfolio .hidden-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 77, 30, 0.9);
+  background: linear-gradient(135deg, rgba(255,77,30,0.9) 0%, rgba(50,23,0,0.9) 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  text-align: center;
+}
+
+.our-portfolio .item:hover .hidden-content {
+  opacity: 1;
+}
+
+.our-portfolio .item:hover .showed-content img {
+  transform: scale(1.05);
+}
+
+.our-portfolio .hidden-content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  transform: translateY(20px);
+  transition: transform 0.5s ease;
+}
+
+.our-portfolio .hidden-content p {
+  transform: translateY(20px);
+  transition: transform 0.5s ease 0.1s;
+}
+
+.our-portfolio .item:hover .hidden-content h4,
+.our-portfolio .item:hover .hidden-content p {
+  transform: translateY(0);
+}
+
+/* Hide scrollbar for cleaner look */
+.portfolio-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio-item {
+    width: 280px;
+  }
+}
 
 
 
